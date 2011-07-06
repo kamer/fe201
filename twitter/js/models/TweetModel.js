@@ -1,13 +1,41 @@
-// Copyright (c) 2009-2010 Techinox Information Technologies (http://www.techinox.com)
-// Techinox Commercial License
-//
-// @author Armagan Amcalar <armagan@tart.com.tr>
+/**
+ * Created by JetBrains PhpStorm.
+ * User: kamer
+ * Date: 05/07/11
+ * Time: 1:16 AM
+ * To change this template use File | Settings | File Templates.
+ */
 
-var TweetModel = function() {
+var TweetModel = function(){
 
 };
 
-TweetModel.prototype.postTweet = function(user, body) {
+TweetModel.prototype.getTweetsByUserId = function(userId){
+     var arr = [];
+    //bunu direkt user model'dan da cagirabilirsin, simdilik dur 
+     for (var tweet in localStorage){
+        tweet = localStorage.getObject(tweet);
+        if (tweet && tweet.userId && tweet.userId == userId){
+            arr.push(tweet);
+        }
+    }
+    return arr;
+};
+
+TweetModel.prototype.postTweet = function(user, body){
     var tweet = new Tweet(user, body);
-    localStorage.setObject(tweet.id, tweet);
-}
+    localStorage.setObject(tweet.id,tweet);
+};
+
+TweetModel.prototype.removeTweet = function(tweetId){
+    for (var tweetkey in localStorage){
+        tweet = localStorage.getObject(tweetkey);
+        if (tweet && tweet.id && tweet.id == tweetId){
+        localStorage.removeItem(tweetkey);
+        return true;
+        }
+    }
+    return false;
+
+};
+
