@@ -6,7 +6,19 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var Follow = function (id, followerId, followingId){
+/**
+ * @fileoverview Follow class
+ */
+goog.provide('twitter.Follow');
+goog.require('tart.getUId');
+
+/**
+ * Direct Message class.
+ *
+ * @constructor
+ */
+
+twitter.Follow = function (id, followerId, followingId){
     this.id = tart.getUId();
     this.followerId = followerId;
     this.followingId = followingId;
