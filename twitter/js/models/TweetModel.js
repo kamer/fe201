@@ -40,12 +40,12 @@ twitter.TweetModel.prototype.getTweetsByUserId = function(userId){
     return arr;
 };
 
-TweetModel.prototype.postTweet = function(user, body){
+twitter.TweetModel.prototype.postTweet = function(user, body){
     var tweet = new Tweet(user, body);
     localStorage.setObject(tweet.id,tweet);
 };
 
-TweetModel.prototype.removeTweet = function(tweetId){
+twitter.TweetModel.prototype.removeTweet = function(tweetId){
     for (var tweetkey in localStorage){
         tweet = localStorage.getObject(tweetkey);
         if (tweet && tweet.id && tweet.id == tweetId){
