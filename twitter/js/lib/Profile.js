@@ -6,7 +6,20 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var Profile = function (bio, photoUrl, location, userId){
+/**
+ * @fileoverview Profile class
+ */
+goog.provide('twitter.DirectMessage');
+goog.require('tart.getUId');
+
+
+/**
+ * Profile class.
+ *
+ * @constructor
+ */
+
+twitter.Profile = function (bio, photoUrl, location, userId){
     this.id = tart.getUId();
     this.userId = userId;
     this.bio = bio;
