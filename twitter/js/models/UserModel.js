@@ -6,17 +6,30 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var UserModel = function(){
+/**
+ * @fileoverview User Model class that deals with posting
+ */
+
+goog.provide('twitter.UserModel');
+goog.require('twitter.User');
+
+/**
+ * User Model class. Has utility functions that manage user actions.
+ *
+ * @constructor
+ */
+
+twitter.UserModel = function(){
 
 };
 
-UserModel.prototype.createUser = function(username, password, email){
+twitter.UserModel.prototype.createUser = function(username, password, email){
        var user = new User(username, password, email);
         localStorage.setObject(user.id,user);
         
     };
 
-UserModel.prototype.removeUser = function(userId){
+twitter.UserModel.prototype.removeUser = function(userId){
     for (var userkey in localStorage){
         user = localStorage.getObject(userkey);
         if (user && user.id && user.id == userId){
@@ -27,7 +40,7 @@ UserModel.prototype.removeUser = function(userId){
     return false;
 };
 
-UserModel.prototype.login = function(username, password){
+twitter.UserModel.prototype.login = function(username, password){
     //var user = new User(username, password);
     for (var user in localStorage){
         user = localStorage.getObject(user);
