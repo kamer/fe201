@@ -6,17 +6,30 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var DirectMessageModel = function(){
+/**
+ * @fileoverview DirectMessage Model class that deals with messaging between users.
+ */
+
+goog.provide('twitter.DirectMessageModel');
+goog.require('twitter.DirectMessage');
+
+/**
+ * Direct Message Model class. Has utility functions that sends a direct message.
+ *
+ * @constructor
+ */
+
+twitter.DirectMessageModel = function(){
     
 };
 
-DirectMessageModel.prototype.sendDirectMessage = function (from, to, body){
+twitter.DirectMessageModel.prototype.sendDirectMessage = function (from, to, body){
     var directMessage = new DirectMessage(from, to, body);
     localStorage.setObject(directMessage.id,directMessage);
 
 };
 
-DirectMessageModel.prototype.getInboxByUserId = function (userid){
+twitter.DirectMessageModel.prototype.getInboxByUserId = function (userid){
      var arr = [];
     //bunu direkt user model'dan da cagirabilirsin, simdilik dur
      for (var directMessage in localStorage){
