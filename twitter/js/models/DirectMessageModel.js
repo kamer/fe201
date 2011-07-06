@@ -43,7 +43,7 @@ twitter.DirectMessageModel.prototype.getInboxByUserId = function (userid){
 
 };
 
-DirectMessageModel.prototype.getSentByUserId = function (userid){
+twitter.DirectMessageModel.prototype.getSentByUserId = function (userid){
      var arr = [];
         //bunu direkt user model'dan da cagirabilirsin, simdilik dur
          for (var directMessage in LocalStorage){
