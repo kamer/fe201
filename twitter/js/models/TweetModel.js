@@ -6,11 +6,29 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var TweetModel = function(){
+/**
+ * @fileoverview Tweet Model class that deals with posting 
+ */
+
+goog.provide('twitter.TweetModel');
+goog.require('twitter.Tweet');
+
+/**
+ * Tweet Model class. Has utility functions that sends a tweet.
+ *
+ * @constructor
+ */
+
+twitter.TweetModel = function(){
 
 };
 
-TweetModel.prototype.getTweetsByUserId = function(userId){
+/**
+ *
+ * @param userId
+ */
+
+twitter.TweetModel.prototype.getTweetsByUserId = function(userId){
      var arr = [];
     //bunu direkt user model'dan da cagirabilirsin, simdilik dur 
      for (var tweet in localStorage){
