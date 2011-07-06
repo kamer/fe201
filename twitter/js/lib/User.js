@@ -6,7 +6,19 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var User = function(username, password, email){
+/**
+ * @fileoverview User class
+ */
+goog.provide('twitter.User');
+goog.require('tart.getUId');
+
+/**
+ * User class.
+ *
+ * @constructor
+ */
+
+twitter.User = function(username, password, email){
     this.id = tart.getUId();
     this.username = username;
     this.password= password;
