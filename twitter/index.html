@@ -2,15 +2,43 @@
 <html>
 <head>
     <title>FE201</title>
-    <script type="text/javascript" src="js/third_party/jquery-1.6.2.js"></script>
-    <script type="text/javascript" src="js/third_party/tart.js"></script>
-    <script type="text/javascript">
-        var session = localStorage.getItem("session"),
-                user = userModel.getUserById(session.userId);
-
-    </script>
+    <script type="text/javascript" src="js/thirdParty/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="js/thirdParty/tart.js"></script>
+    <script type="text/javascript" src="js/lib/User.js"></script>
+    <script type="text/javascript" src="js/lib/Tweet.js"></script>
+    <script type="text/javascript" src="js/lib/Session.js"></script>
+    <script type="text/javascript" src="js/lib/DirectMessage.js"></script>
+    <script type="text/javascript" src="js/lib/Follow.js"></script>
+    <script type="text/javascript" src="js/lib/Profile.js"></script>
+    <script type="text/javascript" src="js/model/UserModel.js"></script>
+    <script type="text/javascript" src="js/model/ProfileModel.js"></script>
+    <script type="text/javascript" src="js/model/FollowManager.js"></script>
+    <script type="text/javascript" src="js/model/DirectMessageModel.js"></script>
+    <script type="text/javascript" src="js/model/TweetModel.js"></script>
 </head>
+
+<script type=text/javascript>
+var log = function (username, password){
+    var userModel = new UserModel();
+    var loggedIn = userModel.login(username, password);
+}
+
+$(document).ready(function() {
+    var $loginForm = $("<form name='login'>");
+    var $username = $("<input type='text' id='user'>");
+    var $password = $("<input type='password' id='pass'>");
+    var $button = $("<button type='submit'>");
+
+    $loginForm.append($username).append($password);
+    $("body").append($loginForm).append($button);
+
+    $button.click(function(){
+        log($username.val(), $password.val())
+    });
+});
+</script>
 <body>
+
 
 </body>
 </html>
