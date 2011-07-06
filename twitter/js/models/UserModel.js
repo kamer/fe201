@@ -54,12 +54,12 @@ twitter.UserModel.prototype.login = function(username, password){
     return false;
 };
 
-UserModel.prototype.logout = function(){
+twitter.UserModel.prototype.logout = function(){
     localStorage.removeItem(session);
 
 };
 
-UserModel.prototype.getUserById = function(userId){
+twitter.UserModel.prototype.getUserById = function(userId){
      for (var user in localStorage){
         user = localStorage.getObject(user);
         if (user && user.id && user.id == userId){
@@ -69,7 +69,7 @@ UserModel.prototype.getUserById = function(userId){
     return false;
 };
 
-UserModel.prototype.getUserByUsername = function(username){
+twitter.UserModel.prototype.getUserByUsername = function(username){
     for (var user in localStorage){
         user = localStorage.getObject(user);
         if (user && user.username &&user.username == username){
