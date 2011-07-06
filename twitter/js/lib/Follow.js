@@ -1,10 +1,13 @@
-// Copyright (c) 2009-2010 Techinox Information Technologies (http://www.techinox.com)
-// Techinox Commercial License
-//
-// @author Armagan Amcalar <armagan@tart.com.tr>
+/**
+ * Created by JetBrains PhpStorm.
+ * User: kamer
+ * Date: 05/07/11
+ * Time: 4:20 AM
+ * To change this template use File | Settings | File Templates.
+ */
 
-var Follow = function(followerId, followingId) {
+var Follow = function (id, followerId, followingId){
     this.id = tart.getUId();
     this.followerId = followerId;
     this.followingId = followingId;
-}
+};
