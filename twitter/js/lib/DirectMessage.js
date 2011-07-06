@@ -6,10 +6,23 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var DirectMessage = function(id, from, to, body){
+/**
+ * @fileoverview DirectMessage class
+ */
+goog.provide('twitter.DirectMessage');
+goog.require('tart.getUId');
+goog.require('tart.randomTime');
+
+/**
+ * Direct Message class.
+ *
+ * @constructor
+ */
+
+twitter.DirectMessage = function(id, from, to, body){
     this.id = tart.getUId();
-    this.from;
-    this.to;
-    this.body;
+    this.from = from;
+    this.to = to ;
+    this.body = body;
 
 };
