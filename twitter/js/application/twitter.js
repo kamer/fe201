@@ -10,7 +10,8 @@ goog.require('tart.mvc');
 goog.require('twitter.controllers.SetupController');
 goog.require('twitter.controllers.IndexController');
 goog.require('tart.storage.Storage');
-goog.provide('twitter.Application');
+goog.provide('twitter');
+
 
 
 /**
@@ -19,10 +20,8 @@ goog.provide('twitter.Application');
  */
 twitter.Application = function() {
     goog.base(this);
+    
 };
 
 goog.inherits(twitter.Application, tart.mvc.Application);
-
-
-twitter.Application.prototype.localStorage = new tart.storage.Storage();
 
