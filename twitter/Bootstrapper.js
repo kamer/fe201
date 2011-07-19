@@ -9,6 +9,8 @@ goog.require('twitter.Application');
  */
 ttnet.Bootstrapper = function() {
     new twitter.Application();
+    twitter.localStorage = new tart.storage.Storage();
 };
 
 goog.exportSymbol('twitter.Bootstrapper', twitter.Bootstrapper);
+
