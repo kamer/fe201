@@ -10,8 +10,8 @@
  * @fileoverview DirectMessage class
  */
 goog.provide('twitter.DirectMessage');
-goog.require('tart.getUId');
-goog.require('tart.randomTime');
+goog.require('tart');
+
 
 /**
  * Direct Message class.
@@ -20,7 +20,7 @@ goog.require('tart.randomTime');
  */
 
 twitter.DirectMessage = function(id, from, to, body){
-    this.id = tart.getUId();
+    this.id = tart.getUid();
     this.from = from;
     this.to = to ;
     this.body = body;
