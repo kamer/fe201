@@ -12,6 +12,8 @@
 
 goog.provide('twitter.UserModel');
 goog.require('twitter.User');
+goog.require('twitter.Session');
+goog.require('tart.storage.Storage');
 
 /**
  * User Model class. Has utility functions that manage user actions.
@@ -24,14 +26,14 @@ twitter.UserModel = function(){
 };
 
 twitter.UserModel.prototype.createUser = function(username, password, email){
-       var user = new User(username, password, email);
-        localStorage.setObject(user.id,user);
+       var user = new twitter.User(username, password, email);
+        twitter.localStorage.set(user.id,user);
         
     };
 
 twitter.UserModel.prototype.removeUser = function(userId){
     for (var userkey in localStorage){
-        user = localStorage.getObject(userkey);
+        var user = twitter.localStorage.get(userkey);
         if (user && user.id && user.id == userId){
             localStorage.removeItem(userkey);
             return true;
@@ -42,11 +44,11 @@ twitter.UserModel.prototype.removeUser = function(userId){
 
 twitter.UserModel.prototype.login = function(username, password){
     //var user = new User(username, password);
-    for (var user in localStorage){
-        user = localStorage.getObject(user);
+    for (var u in localStorage){
+        var user = twitter.localStorage.get(u);
         if (user && user.username && user.password && user.username == username && user.password == password){
-            var session = new Session(user.id);
-            localStorage.setObject("session", session);
+            var session = new twitter.Session(user.id);
+            twitter.localStorage.set("session", session);
             return true;
         }
     }
@@ -55,13 +57,13 @@ twitter.UserModel.prototype.login = function(username, password){
 };
 
 twitter.UserModel.prototype.logout = function(){
-    localStorage.removeItem(session);
+    localStorage.removeItem("session");
 
 };
 
 twitter.UserModel.prototype.getUserById = function(userId){
      for (var user in localStorage){
-        user = localStorage.getObject(user);
+        user = twitter.localStorage.get(user);
         if (user && user.id && user.id == userId){
             return user;
         }
@@ -71,7 +73,7 @@ twitter.UserModel.prototype.getUserById = function(userId){
 
 twitter.UserModel.prototype.getUserByUsername = function(username){
     for (var user in localStorage){
-        user = localStorage.getObject(user);
+        user = twitter.localStorage.get(user);
         if (user && user.username &&user.username == username){
             return user;
         }
