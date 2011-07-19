@@ -10,8 +10,8 @@
  * @fileoverview Follow Manager class that deals with following actions
  */
 
-goog.provide('twitter.FollowManager');
-goog.require('twitter.Follow');
+goog.provide('twitter.models.FollowManager');
+goog.require('twitter.lib.Follow');
 goog.require('tart.storage.Storage');
 
 
