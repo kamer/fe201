@@ -11,8 +11,8 @@
  * @fileoverview Profile Model class that deals with users' profile
  */
 
-goog.provide('twitter.ProfileModel');
-goog.require('twitter.Profile');
+goog.provide('twitter.models.ProfileModel');
+goog.require('twitter.lib.Profile');
 goog.require('tart.storage.Storage');
 
 /**
