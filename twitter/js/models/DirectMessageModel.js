@@ -12,6 +12,8 @@
 
 goog.provide('twitter.DirectMessageModel');
 goog.require('twitter.DirectMessage');
+goog.require('tart.storage.Storage');
+
 
 /**
  * Direct Message Model class. Has utility functions that sends a direct message.
@@ -23,18 +25,30 @@ twitter.DirectMessageModel = function(){
     
 };
 
+/**
+ * Stores a direct message to local storage with from, to and body information.
+ * @param {string} from
+ * @param {string} to
+ * @param {string} body
+ */
 twitter.DirectMessageModel.prototype.sendDirectMessage = function (from, to, body){
-    var directMessage = new DirectMessage(from, to, body);
-    localStorage.setObject(directMessage.id,directMessage);
+    var directMessage = new twitter.DirectMessage(from, to, body);
+    twitter.localStorage.set(directMessage.id,directMessage);
 
 };
 
-twitter.DirectMessageModel.prototype.getInboxByUserId = function (userid){
+/**
+ * Returns all direct messages sent to a particular user. Gets data from local storage.
+ * @param {number} userId
+ * @return {Array.<DirectMessage>}
+ */
+
+twitter.DirectMessageModel.prototype.getInboxByUserId = function (userId){
      var arr = [];
     //bunu direkt user model'dan da cagirabilirsin, simdilik dur
      for (var directMessage in localStorage){
-        directMessage = localStorage.getObject(directMessage);
-        if (directMessage && directMessage.to.user.id && directMessage.to.user.id==userid){
+        directMessage = twitter.localStorage.get(directMessage);
+        if (directMessage && directMessage.to.user.id && directMessage.to.user.id==userId){
             arr.push(directMessage);
             
         }
@@ -43,12 +57,17 @@ twitter.DirectMessageModel.prototype.getInboxByUserId = function (userid){
 
 };
 
-twitter.DirectMessageModel.prototype.getSentByUserId = function (userid){
+/**
+ * Returns all direct messages sent from a particular user. Gets data from local storage. 
+ * @param {number} userId
+ */
+
+twitter.DirectMessageModel.prototype.getSentByUserId = function (userId){
      var arr = [];
         //bunu direkt user model'dan da cagirabilirsin, simdilik dur
-         for (var directMessage in LocalStorage){
-            directMessage = localStorage.getObject(directMessage);
-            if (directMessage && directMessage.from.user.id && directMessage.from.user.id==userid){
+         for (var directMessage in localStorage){
+            directMessage = twitter.localStorage.get(directMessage);
+            if (directMessage && directMessage.from.user.id && directMessage.from.user.id==userId){
                 arr.push(directMessage);
 
             }
