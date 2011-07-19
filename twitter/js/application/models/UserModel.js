@@ -10,9 +10,9 @@
  * @fileoverview User Model class that deals with posting
  */
 
-goog.provide('twitter.UserModel');
-goog.require('twitter.User');
-goog.require('twitter.Session');
+goog.provide('twitter.models.UserModel');
+goog.require('twitter.lib.User');
+goog.require('twitter.lib.Session');
 goog.require('tart.storage.Storage');
 
 /**
