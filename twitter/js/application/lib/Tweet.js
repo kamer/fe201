@@ -9,7 +9,7 @@
 /**
  * @fileoverview Tweet class
  */
-goog.provide('twitter.Tweet');
+goog.provide('twitter.lib.Tweet');
 goog.require('tart');
 goog.require('tart.date');
 
