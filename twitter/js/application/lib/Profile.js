@@ -9,7 +9,7 @@
 /**
  * @fileoverview Profile class
  */
-goog.provide('twitter.Profile');
+goog.provide('twitter.lib.Profile');
 goog.require('tart');
 
 
