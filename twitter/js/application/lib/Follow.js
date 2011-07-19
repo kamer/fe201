@@ -9,7 +9,7 @@
 /**
  * @fileoverview Follow class
  */
-goog.provide('twitter.Follow');
+goog.provide('twitter.lib.Follow');
 goog.require('tart');
 
 /**
