@@ -9,8 +9,8 @@
 /**
  * @fileoverview Profile class
  */
-goog.provide('twitter.DirectMessage');
-goog.require('tart.getUId');
+goog.provide('twitter.Profile');
+goog.require('tart');
 
 
 /**
@@ -20,7 +20,7 @@ goog.require('tart.getUId');
  */
 
 twitter.Profile = function (bio, photoUrl, location, userId){
-    this.id = tart.getUId();
+    this.id = tart.getUid();
     this.userId = userId;
     this.bio = bio;
     this.photoUrl = photoUrl;

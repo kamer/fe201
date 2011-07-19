@@ -10,7 +10,7 @@
  * @fileoverview Session class
  */
 goog.provide('twitter.Session');
-goog.require('tart.getUId');
+goog.require('tart');
 
 
 /**
@@ -20,6 +20,6 @@ goog.require('tart.getUId');
  */
 
 twitter.Session = function (userId) {
-    this.id = tart.getUId();
-    this.userId=userId;
+    this.id = tart.getUid();
+    this.userId = userId;
 };
