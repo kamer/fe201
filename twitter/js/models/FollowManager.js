@@ -12,6 +12,8 @@
 
 goog.provide('twitter.FollowManager');
 goog.require('twitter.Follow');
+goog.require('tart.storage.Storage');
+
 
 /**
  * Follow Manager class. Has utility functions that handles following actions and logs followers.
@@ -24,8 +26,8 @@ twitter.FollowManager = function(){
 };
 
 twitter.FollowManager.prototype.createFollow = function(followerId, followingId){
-    var follow = new Follow (followerId, followingId);
-    localStorage.setObject(follow.id, follow);
+    var follow = new twitter.Follow (followerId, followingId);
+    twitter.localStorage.set(follow.id, follow);
 };
 
 /**
@@ -37,7 +39,7 @@ twitter.FollowManager.prototype.createFollow = function(followerId, followingId)
 twitter.FollowManager.prototype.getFollowingByUserId = function(userId){
      var arr = [];
      for (var following in localStorage){
-        following = localStorage.getObject(following);
+        following = twitter.localStorage.get(following);
         if (following && following.userId && following.userId == userId){
             arr.push(following);
             //following.push(UserModel.getUserById(follow.followingId));
@@ -50,7 +52,7 @@ twitter.FollowManager.prototype.getFollowingByUserId = function(userId){
 twitter.FollowManager.prototype.getFollowersByUserId = function(userId){
     var arr = [];
        for (var follower in localStorage){
-          follower = localStorage.getObject(follower);
+          follower = twitter.localStorage.get(follower);
           if (follower && follower.userId && follower.userId == userId){
               arr.push(follower);
           }
