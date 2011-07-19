@@ -9,7 +9,7 @@
 /**
  * @fileoverview User class
  */
-goog.provide('twitter.User');
+goog.provide('twitter.lib.User');
 goog.require('tart');
 
 /**
