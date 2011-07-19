@@ -40,7 +40,7 @@ twitter.DirectMessageModel.prototype.sendDirectMessage = function (from, to, bod
 /**
  * Returns all direct messages sent to a particular user. Gets data from local storage.
  * @param {number} userId
- * @return {Array.<DirectMessage>}
+ *
  */
 
 twitter.DirectMessageModel.prototype.getInboxByUserId = function (userId){
