@@ -10,7 +10,7 @@
  * @fileoverview Follow class
  */
 goog.provide('twitter.Follow');
-goog.require('tart.getUId');
+goog.require('tart');
 
 /**
  * Direct Message class.
@@ -19,7 +19,7 @@ goog.require('tart.getUId');
  */
 
 twitter.Follow = function (id, followerId, followingId){
-    this.id = tart.getUId();
+    this.id = tart.getUid();
     this.followerId = followerId;
     this.followingId = followingId;
 };
