@@ -33,7 +33,7 @@ twitter.FollowManager.prototype.createFollow = function(followerId, followingId)
 /**
  * Returns users that a specific user follows by userid
  * @param {number} userId A user id. This method uses this id to find a user, and then fetches that user's followers.
- * @return {Array.<User>} Followers of the given user. 
+ * 
  */
 
 twitter.FollowManager.prototype.getFollowingByUserId = function(userId){
