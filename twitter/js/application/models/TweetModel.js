@@ -10,8 +10,8 @@
  * @fileoverview Tweet Model class that deals with posting 
  */
 
-goog.provide('twitter.TweetModel');
-goog.require('twitter.Tweet');
+goog.provide('twitter.models.TweetModel');
+goog.require('twitter.lib.Tweet');
 goog.require('tart.storage.Storage');
 
 /**
