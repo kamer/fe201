@@ -9,7 +9,7 @@
 /**
  * @fileoverview DirectMessage class
  */
-goog.provide('twitter.DirectMessage');
+goog.provide('twitter.lib.DirectMessage');
 goog.require('tart');
 
 
