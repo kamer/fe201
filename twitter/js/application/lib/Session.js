@@ -9,7 +9,7 @@
 /**
  * @fileoverview Session class
  */
-goog.provide('twitter.Session');
+goog.provide('twitter.lib.Session');
 goog.require('tart');
 
 
