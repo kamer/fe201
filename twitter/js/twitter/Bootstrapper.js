@@ -1,5 +1,8 @@
 goog.provide('twitter.Bootstrapper');
 goog.require('twitter.Application');
+goog.require('twitter.controllers.IndexController');
+goog.require('twitter.controllers.SetupController');
+
 
 
 
@@ -7,7 +10,7 @@ goog.require('twitter.Application');
  * Bootstrapper of the example application.
  * @constructor
  */
-ttnet.Bootstrapper = function() {
+twitter.Bootstrapper = function() {
     new twitter.Application();
     twitter.localStorage = new tart.storage.Storage();
 };

@@ -13,7 +13,7 @@
 goog.provide('twitter.models.DirectMessageModel');
 goog.require('twitter.lib.DirectMessage');
 goog.require('tart.storage.Storage');
-
+goog.require('twitter.Bootstrapper');
 
 /**
  * Direct Message Model class. Has utility functions that sends a direct message.
