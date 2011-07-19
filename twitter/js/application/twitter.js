@@ -6,9 +6,23 @@
  * To change this template use File | Settings | File Templates.
  */
 
-goog.require('twitter.setup');
-goog.require('twitter.index');
+goog.require('tart.mvc');
+goog.require('twitter.controllers.SetupController');
+goog.require('twitter.controllers.IndexController');
 goog.require('tart.storage.Storage');
-goog.provide('twitter');
+goog.provide('twitter.Application');
 
-twitter.localStorage = new tart.storage.Storage();
+
+/**
+ * @constructor
+ * @extends {tart.mvc.Application}
+ */
+twitter.Application = function() {
+    goog.base(this);
+};
+
+goog.inherits(twitter.Application, tart.mvc.Application);
+
+
+twitter.Application.prototype.localStorage = new tart.storage.Storage();
+
