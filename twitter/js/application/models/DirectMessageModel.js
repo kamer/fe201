@@ -10,8 +10,8 @@
  * @fileoverview DirectMessage Model class that deals with messaging between users.
  */
 
-goog.provide('twitter.DirectMessageModel');
-goog.require('twitter.DirectMessage');
+goog.provide('twitter.models.DirectMessageModel');
+goog.require('twitter.lib.DirectMessage');
 goog.require('tart.storage.Storage');
 
 
