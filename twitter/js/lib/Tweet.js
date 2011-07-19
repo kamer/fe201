@@ -10,7 +10,8 @@
  * @fileoverview Tweet class
  */
 goog.provide('twitter.Tweet');
-goog.require('tart.getUId');
+goog.require('tart');
+goog.require('tart.date');
 
 /**
  * Tweet class.
@@ -19,8 +20,8 @@ goog.require('tart.getUId');
  */
 
 twitter.Tweet = function(userId, body){
-    this.id = tart.getUId();
+    this.id = tart.getUid();
     this.userId = userId;
     this.body = body;
-    this.time = tart.randomTime();
+    this.time = tart.date.randomTimeInInterval(new goog.date.Interval(-1));
 };
