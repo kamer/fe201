@@ -10,7 +10,7 @@
  * @fileoverview User class
  */
 goog.provide('twitter.User');
-goog.require('tart.getUId');
+goog.require('tart');
 
 /**
  * User class.
@@ -19,11 +19,11 @@ goog.require('tart.getUId');
  */
 
 twitter.User = function(username, password, email){
-    this.id = tart.getUId();
+    this.id = tart.getUid();
     this.username = username;
     this.password= password;
     this.email = email;
-    this.tweets = [];
+   /* this.tweets = [];
     this.profile;
-    this.followers;
+    this.followers;*/
 };
