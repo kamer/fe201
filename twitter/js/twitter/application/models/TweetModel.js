@@ -45,6 +45,7 @@ twitter.TweetModel.prototype.getTweetsByUserId = function(userId){
 };
 
 twitter.TweetModel.prototype.postTweet = function(user, body){
+    console.log("posttwwet icindeki user:" +user);
     var tweet = new twitter.Tweet(user.id, body);
     twitter.localStorage.set(tweet.id,tweet);
 };
