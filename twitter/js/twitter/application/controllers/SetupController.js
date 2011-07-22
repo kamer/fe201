@@ -50,7 +50,7 @@ twitter.setup = function() {
                 email: "jack@shephard.com"
             }
         ];
-   // localStorage.clear();
+    localStorage.clear();
 
     for (var i = 0, l = userData.length; i < l; i++) {
         var user = userData[i], size = Math.round(Math.random() * 5) + 2;
