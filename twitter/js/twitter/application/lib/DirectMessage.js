@@ -19,10 +19,10 @@ goog.require('tart');
  * @constructor
  */
 
-twitter.DirectMessage = function(id, from, to, body){
+twitter.DirectMessage = function(id, fromId, toId, body){
     this.id = tart.getUid();
-    this.from = from;
-    this.to = to ;
+    this.from = fromId;
+    this.to = toId ;
     this.body = body;
 
 };
