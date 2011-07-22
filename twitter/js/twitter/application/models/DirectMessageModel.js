@@ -66,7 +66,7 @@ twitter.DirectMessageModel.prototype.getSentByUserId = function (userId){
         //bunu direkt user model'dan da cagirabilirsin, simdilik dur
          for (var directMessage in localStorage){
             directMessage = twitter.localStorage.get(directMessage);
-            if (directMessage && directMessage.from.user.id && directMessage.from.user.id==userId){
+            if (directMessage && directMessage.fromId && directMessage.fromId==userId){
                 arr.push(directMessage);
 
             }
