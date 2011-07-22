@@ -6,12 +6,20 @@
  * To change this template use File | Settings | File Templates.
  */
 
-goog.require('tart.mvc');
+//goog.require('tart.mvc');
 goog.require('twitter.controllers.SetupController');
 goog.require('twitter.controllers.IndexController');
 goog.require('tart.storage.Storage');
-//goog.provide('twitter');
+goog.provide('twitter');
 goog.provide('twitter.Application');
+
+
+twitter.Application = function (){
+    twitter.localStorage = new tart.storage.Storage();
+    twitter.setup();
+    twitter.index();
+
+};
 
 
 
@@ -19,17 +27,19 @@ goog.provide('twitter.Application');
  * @constructor
  * @extends {tart.mvc.Application}
  */
+/*
 twitter.Application = function() {
 
     goog.base(this);
     
-};
+};*/
 
-goog.inherits(twitter.Application, tart.mvc.Application);
+//goog.inherits(twitter.Application, tart.mvc.Application);
 
 /**
  * @inheritDoc
  */
+/*
 twitter.Application.prototype.initRouting = function() {
     var router = this.getRouter();
     router.addRoute(new tart.mvc.uri.Route({
@@ -39,4 +49,4 @@ twitter.Application.prototype.initRouting = function() {
       //  action: twitter.controllers.IndexController.indexAction
     }));
 
-};
+};*/
