@@ -2,6 +2,7 @@ goog.provide('twitter.Bootstrapper');
 goog.require('twitter.Application');
 goog.require('twitter.controllers.IndexController');
 goog.require('twitter.controllers.SetupController');
+goog.require('tart.storage.Storage');
 
 
 
@@ -11,9 +12,12 @@ goog.require('twitter.controllers.SetupController');
  * @constructor
  */
 twitter.Bootstrapper = function() {
+    //twitter.localStorage = new tart.storage.Storage();
     new twitter.Application();
-    twitter.localStorage = new tart.storage.Storage();
+
 };
+
+
 
 goog.exportSymbol('twitter.Bootstrapper', twitter.Bootstrapper);
 
