@@ -12,7 +12,10 @@
 
 goog.provide('twitter.models.TweetModel');
 goog.require('twitter.lib.Tweet');
-goog.require('tart.storage.Storage');
+goog.require('twitter.lib.User');
+goog.require('twitter.models.UserModel');
+
+
 
 /**
  * Tweet Model class. Has utility functions that sends a tweet.
