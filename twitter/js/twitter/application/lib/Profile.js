@@ -21,9 +21,9 @@ goog.require('tart');
 
 twitter.Profile = function (bio, photoUrl, location, userId){
     this.id = tart.getUid();
-    this.userId = userId;
     this.bio = bio;
     this.photoUrl = photoUrl;
     this.location = location;
+    this.userId = userId;
 
 };
