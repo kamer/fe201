@@ -7,6 +7,7 @@
  */
 
 goog.require('twitter.models.UserModel');
+goog.require('twitter.lib.User');
 goog.require('twitter.models.TweetModel');
 goog.require('twitter.models.DirectMessageModel');
 goog.require('twitter.models.FollowManager');
