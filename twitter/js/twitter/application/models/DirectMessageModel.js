@@ -31,7 +31,7 @@ twitter.DirectMessageModel = function(){
  * @param {string} body
  */
 twitter.DirectMessageModel.prototype.sendDirectMessage = function (fromId, toId, body){
-    var directMessage = new twitter.DirectMessage(id, fromId, toId, body);
+    var directMessage = new twitter.DirectMessage(fromId, toId, body);
     twitter.localStorage.set(directMessage.id,directMessage);
 
 };
