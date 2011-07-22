@@ -26,12 +26,12 @@ twitter.DirectMessageModel = function(){
 
 /**
  * Stores a direct message to local storage with from, to and body information.
- * @param {string} from
- * @param {string} to
+ * @param {number} fromId
+ * @param {number} toId
  * @param {string} body
  */
-twitter.DirectMessageModel.prototype.sendDirectMessage = function (from, to, body){
-    var directMessage = new twitter.DirectMessage(from, to, body);
+twitter.DirectMessageModel.prototype.sendDirectMessage = function (fromId, toId, body){
+    var directMessage = new twitter.DirectMessage(id, fromId, toId, body);
     twitter.localStorage.set(directMessage.id,directMessage);
 
 };
