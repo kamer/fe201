@@ -50,14 +50,13 @@ twitter.setup = function() {
                 email: "jack@shephard.com"
             }
         ];
-
-    localStorage.clear();
+   // localStorage.clear();
 
     for (var i = 0, l = userData.length; i < l; i++) {
         var user = userData[i], size = Math.round(Math.random() * 5) + 2;
 
         user = userModel.createUser(user.username, user.password, user.email);
-        console.log("setup icindeki user:" +user);
+        console.log("setup icindeki user: " +user);
 
         for (var j = 0; j < size; j++) {
             tweetModel.postTweet(user, tart.string.loremIpsum());
