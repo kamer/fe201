@@ -25,8 +25,8 @@ twitter.ProfileModel = function(){
 
 };
 
-twitter.ProfileModel.prototype.createProfile = function(bio, photoUrl, location){
-    var profile = new twitter.Profile(bio, photoUrl, location);
+twitter.ProfileModel.prototype.createProfile = function(bio, photoUrl, location, userId){
+    var profile = new twitter.Profile(bio, photoUrl, location, userId);
     twitter.localStorage.set(profile.id, profile);
 
 };
