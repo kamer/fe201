@@ -47,7 +47,7 @@ twitter.DirectMessageModel.prototype.getInboxByUserId = function (userId){
     //bunu direkt user model'dan da cagirabilirsin, simdilik dur
      for (var directMessage in localStorage){
         directMessage = twitter.localStorage.get(directMessage);
-        if (directMessage && directMessage.to.user.id && directMessage.to.user.id==userId){
+        if (directMessage && directMessage.toId && directMessage.toId==userId){
             arr.push(directMessage);
             
         }
